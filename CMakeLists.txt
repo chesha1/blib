@@ -4,4 +4,4 @@ project(blib)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(blib
-        main.cpp)
+        blib/main.cpp)

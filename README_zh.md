@@ -32,10 +32,7 @@ TODO HERE
 TODO HERE
 
 ## 参考
-STL from MSVC, GCC  
-[Folly](https://github.com/facebook/folly)  
-[Flare](https://github.com/Tencent/flare)  
-
+见 [列表](reference_list.md)
 
 
 

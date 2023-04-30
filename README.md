@@ -17,9 +17,9 @@ a toy project for finding a job, just for reference
 - [ ] Memory management
 - [ ] associative container implemented as red-black tree
 - [ ] associative container implemented as hashtable
-- [ ] 线程安全的容器
-- [ ] （无栈）协程
-- [ ] 其他异步操作
+- [ ] thread-safe container
+- [ ] (stackless) coroutine
+- [ ] Other asynchronous operations
 - [ ] rpc
 
 
@@ -32,10 +32,7 @@ TODO HERE
 TODO HERE
 
 ## Reference
-STL from MSVC, GCC  
-[Folly](https://github.com/facebook/folly)  
-[Flare](https://github.com/Tencent/flare)  
-
+See [List](reference_list.md) here.
 
 
 
