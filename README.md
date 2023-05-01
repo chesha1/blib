@@ -14,13 +14,14 @@ a toy project for finding a job, just for reference
 ## Features
 
 - [ ] Modern C++ ，with C++11/14/17/20 new features
-- [ ] Memory management
-- [ ] associative container implemented as red-black tree
-- [ ] associative container implemented as hashtable
-- [ ] thread-safe container
+- [ ] STL memory management
+- [ ] Low-level memory management (glibc/system call)
+- [ ] Associative container implemented as red-black tree
+- [ ] Associative container implemented as hashtable
+- [ ] Thread-safe container
 - [ ] (stackless) coroutine
 - [ ] Other asynchronous operations
-- [ ] rpc
+- [ ] RPC
 
 
 ## Usage
