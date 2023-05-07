@@ -19,6 +19,8 @@
 
 ## Video
 [STL 侯捷](https://www.youtube.com/watch?v=Edcwv38c7d4)  
+[std::allocator 是什么？重点不是“是什么”，而是“为什么”](https://www.bilibili.com/video/BV15h41167wt)  
+
 
 ## Article
 
@@ -27,7 +29,9 @@
 [STL总体的简单介绍](https://www.zhihu.com/question/24068436/answer/1899511467)  
 [EASTL的设计特点](https://www.zhihu.com/question/67814982/answer/378146992)  
 [STL各个版本的区别](https://zhuanlan.zhihu.com/p/23016264)   
-[自己实现STL的经验](https://www.zhihu.com/question/359420368/answer/2971536952)
+[自己实现STL的经验](https://www.zhihu.com/question/359420368/answer/2971536952)  
+[C++ folly库解读](https://www.zhihu.com/column/c_1327270420144570368)
+
 
 ### Memory Management
 
@@ -38,7 +42,9 @@
 [glibc源码分析（一）系统调用](https://zhuanlan.zhihu.com/p/28984642)  
 [malloc原理](https://www.zhihu.com/question/33979489/answer/1854635802)  
 [malloc原理的另一个讲解](https://www.zhihu.com/question/575065794/answer/2869761623)  
-[其他malloc相关讨论](https://www.zhihu.com/search?type=content&q=malloc%20glibc) 
+[其他malloc相关讨论](https://www.zhihu.com/search?type=content&q=malloc%20glibc)  
+[folly学习（一）：C++中如何实现一个通用迭代器](https://zhuanlan.zhihu.com/p/458712167)  
+
  
  
 
