@@ -1,2 +1,6 @@
-typedef __SIZE_TYPE__ _size_t;
 
+
+namespace blib {
+    typedef __SIZE_TYPE__ size_t;
+    typedef __PTRDIFF_TYPE__ ptrdiff_t;
+}

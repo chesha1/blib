@@ -1,10 +1,11 @@
 #include <iostream>
 #include "config.h"
 #include "allocator.h"
-#include <new>
+
 
 int main() {
-    blib::new_allocator<int> newAllocator;
-    auto i = newAllocator.allocate(1000);
-    return 0;
+//    blib::allocator<int> a;
+//    auto ptr = a.allocate(20);
+//    a.deallocate(ptr,20);
+
 }
