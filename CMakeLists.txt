@@ -4,4 +4,4 @@ project(blib)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(blib
-        blib/main.cpp blib/config.h blib/allocator.h blib/type_traits.h)
+        blib/main.cpp blib/config.h blib/allocator.h blib/type_traits.h blib/iterator_concepts.h blib/iterator_legacy.h)

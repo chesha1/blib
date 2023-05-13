@@ -11,11 +11,18 @@ a toy project for finding a job, just for reference
 
 
 
-## Features
+## Contents
 
-- [ ] Modern C++ ，with C++11/14/17/20 new features
-- [ ] STL memory management
-- [ ] Low-level memory management (glibc/system call)
+- [x] Modern C++ ，with C++11/14/17/20 new features
+- [x] Allocator
+- [ ] Allocator with type traits
+- [ ] std::pmr
+- [ ] Low-level memory management (new/malloc/glibc/system call)  
+- [ ] Exception handling
+- [x] Type traits
+- [ ] Full type traits
+- [x] Iterator
+- [ ] Iterator with hierarchy type traits based on C++20
 - [ ] Associative container implemented as red-black tree
 - [ ] Associative container implemented as hashtable
 - [ ] Thread-safe container

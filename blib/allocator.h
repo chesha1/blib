@@ -39,8 +39,7 @@ namespace blib {
             return static_cast<Tp *>(::operator new(n * sizeof(Tp)));
         }
 
-        void
-        deallocate(Tp *p, blib::size_t n) {
+        void deallocate(Tp *p, blib::size_t n) {
             if (alignof(Tp) > __STDCPP_DEFAULT_NEW_ALIGNMENT__) {
 //                _GLIBCXX_OPERATOR_DELETE(_GLIBCXX_SIZED_DEALLOC(p, n),
 //                                         std::align_val_t(alignof(Tp)));
@@ -52,6 +51,15 @@ namespace blib {
             ::operator delete(p, n * sizeof(Tp));
         }
 
+        template<typename Up, typename... _Args>
+        void construct(Up *p, _Args &&... args)
+        noexcept(std::is_nothrow_constructible<Up, _Args...>::value) {
+            ::new((void *) p) Up(std::forward<_Args>(args)...);
+        }
+
+        template<typename _Up>
+        void destroy(_Up *p)
+        noexcept(std::is_nothrow_destructible<_Up>::value) { p->~_Up(); }
 
     private:
 
@@ -128,12 +136,11 @@ namespace blib {
     using base_allocator = new_allocator<Tp>;
 
     template<typename Tp>
-    class allocator : public base_allocator<Tp>
-    {
+    class allocator : public base_allocator<Tp> {
     public:
-        typedef Tp        value_type;
-        typedef blib::size_t    size_type;
-        typedef blib::ptrdiff_t  difference_type;
+        typedef Tp value_type;
+//        typedef blib::size_t    size_type;
+//        typedef blib::ptrdiff_t  difference_type;
 
 
 
@@ -146,34 +153,32 @@ namespace blib {
 
         // _GLIBCXX_RESOLVE_LIB_DEFECTS
         // 3035. std::allocator's constructors should be constexpr
-        allocator() { }
+        allocator() {}
 
 
-        allocator(const allocator& a): base_allocator<Tp>(a) { }
+        allocator(const allocator &a) : base_allocator<Tp>(a) {}
 
 
         // Avoid implicit deprecation.
-        allocator& operator=(const allocator&) = default;
+        allocator &operator=(const allocator &) = default;
 
 
         template<typename Tp1>
-        allocator(const allocator<Tp1>&) { }
-
+        allocator(const allocator<Tp1> &) {}
 
 
         constexpr
-        ~allocator() { }
+        ~allocator() {}
 
 #if __cplusplus > 201703L
-        [[nodiscard,__gnu__::__always_inline__]]
-        constexpr Tp*
-        allocate(size_t __n)
-        {
-            if (blib::__is_constant_evaluated())
-            {
+
+        [[nodiscard, __gnu__::__always_inline__]]
+        constexpr Tp *
+        allocate(size_t __n) {
+            if (blib::__is_constant_evaluated()) {
                 if (__builtin_mul_overflow(__n, sizeof(Tp), &__n))
                     std::__throw_bad_array_new_length();
-                return static_cast<Tp*>(::operator new(__n));
+                return static_cast<Tp *>(::operator new(__n));
             }
 
             return base_allocator<Tp>::allocate(__n, 0);
@@ -181,21 +186,19 @@ namespace blib {
 
 
         constexpr void
-        deallocate(Tp* p, size_t n)
-        {
-            if (blib::__is_constant_evaluated())
-            {
+        deallocate(Tp *p, size_t n) {
+            if (blib::__is_constant_evaluated()) {
                 ::operator delete(p);
                 return;
             }
             base_allocator<Tp>::deallocate(p, n);
         }
+
 #endif // C++20
 
         friend __attribute__((__always_inline__))
         bool
-        operator==(const allocator&, const allocator&)
-        { return true; }
+        operator==(const allocator &, const allocator &) { return true; }
 
 #if __cpp_impl_three_way_comparison < 201907L
         friend __attribute__((__always_inline__)) _GLIBCXX20_CONSTEXPR
