@@ -1,7 +1,5 @@
-
+#pragma once
 #include <cstddef>
-
-#include "type_traits.h"
 #include <type_traits>
 namespace blib
 {

@@ -11,12 +11,6 @@ namespace blib {
 #define _DEFINE_SPEC_2_HELPER                          \
   template<typename _Tp, typename _Cp>
 
-#define _DEFINE_SPEC(_Order, _Trait, _Type, _Value)    \
-  _DEFINE_SPEC_##_Order##_HELPER                       \
-    struct _Trait<_Type>                               \
-    : public integral_constant<bool, _Value> { };
-
-
     /// integral_constant
     template<typename Tp, Tp v>
     struct integral_constant {
@@ -27,6 +21,15 @@ namespace blib {
 
     typedef integral_constant<bool, true> true_type;
     typedef integral_constant<bool, false> false_type;
+
+
+#define _DEFINE_SPEC(_Order, _Trait, _Type, _Value)    \
+  _DEFINE_SPEC_##_Order##_HELPER                       \
+    struct _Trait<_Type>                               \
+    : public integral_constant<bool, _Value> { };
+
+
+
 
     template<typename>
     struct remove_cv;

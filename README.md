@@ -20,7 +20,6 @@ a toy project for finding a job, just for reference
 - [ ] Low-level memory management (new/malloc/glibc/system call)  
 - [ ] Exception handling
 - [x] Type traits
-- [ ] Full type traits
 - [x] Iterator
 - [ ] Iterator with hierarchy type traits based on C++20
 - [ ] Associative container implemented as red-black tree
