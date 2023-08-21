@@ -1,3 +1,6 @@
+#include <array>
+#include <cstddef>
+#include <cstdlib>
 #include "config.h"
 #include "type_traits.h"
 

@@ -1,21 +1,13 @@
-
 #include <iostream>
-#include "config.h"
-#include "type_traits_new.h"
+#include "test.h"
+#include <set>
 
-
-struct myClass{
-    operator int()
-    {
-        std::cout<<"inversion";
-        return 1;
-    }
-};
+using namespace std;
 
 
 int main() {
-    myClass obj;
-    int a = int(obj);
+    typedef std::_Rb_tree<key_type, value_type, _Identity<value_type>,
+            key_compare, _Key_alloc_type> _Rep_type;
 
 }
 
