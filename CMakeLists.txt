@@ -9,7 +9,8 @@ include_directories(blib/thread_pool)
 file(GLOB SRC blib/*.cpp)
 file(GLOB HEADERS blib/*.h)
 
-add_executable(blib ${SRC} ${HEADERS})
+add_executable(blib ${SRC} ${HEADERS}
+        blib/stl_tree_comment.h)
 
 #add_executable(blib
 #        blib/main.cpp blib/config.h blib/allocator.h blib/type_traits.h blib/iterator_concepts.h blib/iterator_legacy.h blib/type_traits_new.h)
